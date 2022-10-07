@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .flex-container {
+          display: flex;  flex-direction:row;
+          background-color: red;
+      }
+    
+    .flex-container > div {  /*div children of the flex container*/
+      background-color: #f1f1f1; 
+      margin: 10px;  padding: 20px;  font-size: 30px;
+    }
+    
+    /* Responsive layout */
+    @media (max-width: 600px) { 
+         .flex-container{
+             flex-direction:column;
+             background-color: green;
+          }
+        }
+    </style>
+  <title>Treasure</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"   
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" 
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <h1>Treasure Hunt By Vineetha Aredla</h1>
+    <p class="flex-container text-bg-primary p-3" >Click on the chests to search for treasure
+    <p id="chests" class="flex-container text-bg-warning p-3" >Number of chests checked is zero</p>
+    <p id="score" class="flex-container text-bg-info p-3" >Score is unknown</p>
+    <p id="help" class="flex-container text-bg-danger p-3" >Help report</p>
+    </p>
+    <div class="image-grid d-flex flex-column justify-content-center align-items-center">
+        <div class="d-flex">
+           <div><img src="chest.jpg" height="100" width="100" alt="Treasure Chest Picture"></div>
+           <div><img src="chest.jpg" height="100" width="100" alt="Treasure Chest Picture"></div>
+           <div><img src="chest.jpg" height="100" width="100" alt="Treasure Chest Picture"></div>
+           <div><img src="chest.jpg" height="100" width="100" alt="Treasure Chest Picture"></div>
+           <div><img src="chest.jpg" height="100" width="100" alt="Treasure Chest Picture"></div>
+       </div>
+       
+       <div class="d-flex">
+           <div><img src="chest.jpg"height="100" width="100" alt="Treasure Chest Picture"></div>
+           <div><img src="chest.jpg"height="100" width="100" alt="Treasure Chest Picture"></div>
+           <div><img src="chest.jpg"height="100" width="100" alt="Treasure Chest Picture"></div>
+           <div><img src="chest.jpg"height="100" width="100" alt="Treasure Chest Picture"></div>
+           <div><img src="chest.jpg"height="100" width="100" alt="Treasure Chest Picture"></div>
+       </div>
+       
+       <div class="d-flex">
+           <div><img src="chest.jpg"height="100" width="100" alt="Treasure Chest Picture"></div>
+           <div><img src="chest.jpg"height="100" width="100" alt="Treasure Chest Picture"></div>
+           <div><img src="help.jpg"height="100" width="100" alt="Treasure Chest Picture"></div>
+           <div><img src="chest.jpg"height="100" width="100" alt="Treasure Chest Picture"></div>
+           <div><img src="chest.jpg"height="100" width="100" alt="Treasure Chest Picture"></div>
+       </div>
+       
+       <div class="d-flex">
+           <div><img src="chest.jpg"height="100" width="100" alt="Treasure Chest Picture"></div>
+           <div><img src="chest.jpg"height="100" width="100" alt="Treasure Chest Picture"></div>
+           <div><img src="chest.jpg"height="100" width="100" alt="Treasure Chest Picture"></div>
+           <div><img src="chest.jpg"height="100" width="100" alt="Treasure Chest Picture"></div>
+           <div><img src="chest.jpg"height="100" width="100" alt="Treasure Chest Picture"></div>
+       </div>
+       
+       <div class="d-flex">
+           <div><img src="chest.jpg"height="100" width="100" alt="Treasure Chest Picture"></div>
+           <div><img src="chest.jpg"height="100" width="100" alt="Treasure Chest Picture"></div>
+           <div><img src="chest.jpg"height="100" width="100" alt="Treasure Chest Picture"></div>
+           <div><img src="chest.jpg"height="100" width="100" alt="Treasure Chest Picture"></div>
+           <div><img src="chest.jpg"height="100" width="100" alt="Treasure Chest Picture"></div>
+       </div>
+    </div>
+       
+</body>
+</html>
