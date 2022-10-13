@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cycler Page</title>
+    <style>
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            background-color: red;
+        }
+
+        .flex-container>div {
+            /*div children of the flex container*/
+            background-color: #f1f1f1;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+        }
+
+        /* Responsive layout */
+        @media (max-width: 600px) {
+            .flex-container {
+                flex-direction: column;
+                background-color: green;
+            }
+
+            div {
+                width: 33%;
+            }
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <h1> Vineetha Aredla builds a cycler </h1>
+
+
+    <div class="flex-container" id="target">
+
+        <div class="cycler">row item 1</div>
+        <div class="cycler">row item 2</div>
+        <div class="cycler">row item 3</div>
+    </div>
+    <div class="container">
+        <label for="enter the input">Enter the input</label>
+        <input type="text" id="cycle" value=" ">
+    </div>
+    <p> Press the button to create an new element of type div and then add it to the container.
+    </p>
+    <button onclick="makeNewDiv()">Add value</button>
+    <button type="button" class="btn btn-success" onclick="get()">get value</button>
+    <button type="button" class="btn btn-success" onclick="spin()">spin value</button>
+    <button type="button" class="btn btn-success" onclick="swap()">swap value</button>
+
+
+
+</body>
+<script>
+    function makeNewDiv() {
+
+        let element = document.createElement("div")
+        let textname = document.getElementById("cycle").value
+        // input1=document.getElementById("cycle").value
+        element.innerHTML = textname
+        element.style.color = "orange"
+        element.className = "cycler"
+        var container = document.getElementById("target")
+        container.appendChild(element)
+
+    }
+    function get() {
+        var cyclerItems = document.getElementsByClassName("cycler")
+        var len = cyclerItems.length
+        if (len > 0) {
+            cyclerItems[len - 1].remove();
+        }
+    }
+    function spin() {
+       
+        let cyclerItems = document.getElementsByClassName("cycler")
+        var len = cyclerItems.length
+                if(cyclerItems.length > 1) {
+                    removedItem = cyclerItems[len-1]
+                    cyclerItems[len-1].remove()
+                    let container = document.getElementById("target")
+                    container.insertBefore(removedItem, container.firstChild)
+
+    }
+}
+         function swap(){
+            let container = document.getElementById("target")
+            let cyclerItems = document.getElementsByClassName("cycler")
+            let num1=Math.floor(Math.random()*cyclerItems.length)
+            let num2=Math.floor(Math.random()*cyclerItems.length)
+            let firstnum=document.getElementsByClassName("cycler")[num1]
+            let secondnum=document.getElementsByClassName("cycler")[num2]
+            if(cyclerItems.length>1){
+                temp=firstnum.innerHTML
+                firstnum.innerHTML=secondnum.innerHTML
+                secondnum.innerHTML=temp
+
+            }
+           
+
+         }
+
+
+</script>
+
+</html>
