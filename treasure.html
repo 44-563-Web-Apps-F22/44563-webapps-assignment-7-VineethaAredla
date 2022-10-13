@@ -79,12 +79,13 @@
            <div><img src="LockedChest.jpg" id="I24"  onclick="check(24)" height="100" width="100" alt="Treasure Chest Picture"></div>
        </div>
     </div>
+    <button type="button" onclick="resetGame()">Reset Game Button</button>
   <script>
     var ids = ["I0", "I1", "I2", "I3", "I4", "I5", "I6", "I7", "I8", "I9", "I10", "I11", "I12", "I13", "I14", "I15", "I16", "I17", "I18", "I19", "I20", "I21", "I22", "I23", "I24"]
     var chestCount = 0
     var score = 0
     var lastCheck = 12
-    var treasureLocation = 18
+    var treasureLocation = Math.floor(Math.random()*24)
     function check(position) {
         image = document.getElementById(ids[position])
         if (position == treasureLocation) {
@@ -135,6 +136,22 @@
         }
 
     }
+    function resetGame() {
+            treasureLocation = Math.floor(Math.random() * 24)
+            while (treasureLocation == 12) {
+                treasureLocation = Math.floor(Math.random() * 24)
+            }
+            chestCount = 0
+            score = 0
+            document.getElementById("chests").innerHTML = "Number of chests checked is zero"
+            document.getElementById("score").innerHTML = "Score is unknown"
+            document.getElementById("help").innerHTML = "Help report"
+            for (let i = 0; i < 24; i++) {
+                if (i != 12) {
+                    document.getElementById(ids[i]).src = "LockedChest.jpg"
+                }
+            }
+        }
 </script>
   
        
