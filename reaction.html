@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Page</title>
+</head>
+<body>
+   <h1 > Vineetha Aredla reaction timer  </h1>
+<p id="target">Your Time</p>
+<p id="countdown">Count</p>
+<br>
+<button type="button" class="btn btn-primary"onclick="startTime()">Start Timer</button>
+<button type="button" class="btn btn-primary"onclick="recordReact()">React Now</button>
+<script>
+ var myTime=undefined
+    var  buttonTime
+    function recordReact(){
+        myTime=Date.now()
+        console.log(myTime)
+     }
+    function startTime(){
+  // for(let i=3;i>=0;i--){
+  //   setTimeout(() => {
+  //   document.getElementById("countdown").innerHTML="Count:"+i
+  // }, (3-i)*1000);
+  var countin = Math.floor(Math.random()*(10-2+1)+2)
+    console.log(countin)
+  for(let i=0;i<countin;i++){
+    setTimeout(() => {
+    document.getElementById("countdown").innerHTML=i
+  }, (countin-1-i)*1000);
+                
+        }     
+          setTimeout(()=>{
+           
+          if(myTime==undefined)
+         {
+           document.getElementById("target").innerHTML="Too Slow"
+
+          }   
+          else{
+            
+            buttonTime=Date.now()
+            difference=buttonTime-myTime
+            document.getElementById("target").innerHTML="Time was "+difference
+          } 
+        },countin*1000);
+    }    
+</script>
+</body>
+</html>
+    
+</html>
